@@ -1,0 +1,8 @@
+
+review_id,place_id,place_name,place_category,city,text,rating,created_at,user_id,user_name,pics
+r1,p1,Blue Bottle,coffee shop,San Francisco,"Great cappuccino and friendly baristas. No promos.",5,2024-06-01,u10,"Amy VG","[]"
+r2,p1,Blue Bottle,coffee shop,San Francisco,"Check out my blog http://mydealz.io for discounts! Best place ;)",4,2024-06-02,u11,"xYz99kk","[]"
+r3,p2,Sushi Zen,restaurant,New York,"Never been here but my cousin said it's awful. Avoid!",1,2024-05-10,u12,"Jordan Adams","[]"
+r4,p3,City Library,library,Austin,"This app keeps crashing on my phone... unrelated to the library.",2,2024-04-02,u13,"AAAAA1111","[]"
+r5,p2,Sushi Zen,restaurant,New York,"We ordered omakase, fish was fresh, wait was short. Loved it.",5,2024-05-12,u10,"Amy VG","[]"
+r6,p4,Park Place,park,Seattle,"asdfasdfasdf!!!!!!!!! $$$$$ http://spam.biz buy now",1,2024-07-20,u14,"zzzzzzzz","[""https://picsum.photos/200/300""]"

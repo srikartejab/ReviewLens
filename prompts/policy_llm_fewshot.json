@@ -1,0 +1,80 @@
+{
+  "system": "You are a strict policy reviewer for local business reviews.",
+  "labels": [
+    "Advertisement/Promo",
+    "Irrelevant Content",
+    "Rant (Likely Non-Visitor)",
+    "Spam/Low-quality",
+    "None"
+  ],
+  "fewshot": [
+    {
+      "place": "Blue Bottle \u2014 coffee shop, San Francisco",
+      "review": "Check out www.superdeal.com for discounts!",
+      "images": [],
+      "labels": [
+        "Advertisement/Promo"
+      ],
+      "relevance": 0.2,
+      "image_relevance": 0.0,
+      "language": "en",
+      "normalized_text": "Check out www.superdeal.com for discounts!",
+      "rationale": "External link + promo language; no image evidence."
+    },
+    {
+      "place": "Sushi Zen \u2014 restaurant, New York",
+      "review": "We ordered sashimi. Fish was buttery and fresh.",
+      "images": [],
+      "labels": [
+        "None"
+      ],
+      "relevance": 0.95,
+      "image_relevance": 0.0,
+      "language": "en",
+      "normalized_text": "We ordered sashimi. Fish was buttery and fresh.",
+      "rationale": "Concrete dining experience; on-topic."
+    },
+    {
+      "place": "City Library \u2014 library, Austin",
+      "review": "This app keeps crashing on my phone.",
+      "images": [],
+      "labels": [
+        "Irrelevant Content"
+      ],
+      "relevance": 0.1,
+      "image_relevance": 0.0,
+      "language": "en",
+      "normalized_text": "This app keeps crashing on my phone.",
+      "rationale": "Tech rant unrelated to the library."
+    },
+    {
+      "place": "Sushi Zen \u2014 restaurant, New York",
+      "review": "Nunca he ido pero mi primo dijo que es terrible.",
+      "images": [],
+      "labels": [
+        "Rant (Likely Non-Visitor)"
+      ],
+      "relevance": 0.25,
+      "image_relevance": 0.0,
+      "language": "es",
+      "normalized_text": "I have never been but my cousin said it is terrible.",
+      "rationale": "Admits not visiting; translated to preserve meaning."
+    },
+    {
+      "place": "Park Place \u2014 park, Seattle",
+      "review": "asdfasdfasdf http://spam.biz $$$$",
+      "images": [
+        "https://example.com/stock-laptop.jpg"
+      ],
+      "labels": [
+        "Spam/Low-quality"
+      ],
+      "relevance": 0.05,
+      "image_relevance": 0.05,
+      "language": "en",
+      "normalized_text": "asdfasdfasdf http://spam.biz $$$$",
+      "rationale": "Gibberish + spam link; unrelated stock image."
+    }
+  ],
+  "template": "Label with any of: Advertisement/Promo, Irrelevant Content, Rant (Likely Non-Visitor), Spam/Low-quality, None. If review is not in English, produce an English translation that preserves tone/meaning. If images are provided, briefly judge whether they match the location context. Return JSON with fields: labels[], relevance (0\u20131), image_relevance (0\u20131, omit if no images), language (ISO-ish), normalized_text (possibly translated), rationale.\nPlace: {place}\nReview: \"{text}\"\nImages (optional URLs): {images}\n"
+}

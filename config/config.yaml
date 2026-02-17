@@ -1,0 +1,50 @@
+# === One file to rule them all ===
+# Fill in what you know; leave blank to skip.
+
+# ---- Accounts / tokens ----
+kaggle:
+  username: ""
+  key: ""
+  dataset_slugs: ""   # comma-separated, e.g. "owner1/data-one,owner2/data-two"
+datasets:
+  eval_gmrpl_slug: "pawegryka/gmr-pl-fake-reviews-dataset"
+
+huggingface:
+  token: ""           # if you need gated models or want to push to hub
+
+wandb:
+  api_key: ""         # optional
+  project: "review-quality"
+  entity: ""          # optional (your team/org)
+  enable: false
+
+# ---- Features & options ----
+options:
+  translate_non_en: true
+  enable_image_relevance: true
+  enable_username_prior: true
+  enable_dup_burst_prior: true
+  enable_device_location_prior: true
+  enable_profanity_prior: true
+  enable_readability_prior: true
+
+# ---- Models ----
+models:
+  classifier: "microsoft/deberta-v3-base"
+  relevancy_cross_encoder: "cross-encoder/ms-marco-MiniLM-L-12-v2"
+  image_text: "clip-ViT-B-32"
+
+# ---- Thresholds / priors ----
+priors:
+  username_gibberish_to_spam: 0.8
+  image_irrelevant_to_spam: 0.1
+  image_low_to_irrelevant: 0.2
+  burst_24h_to_spam: 5
+  dup_across_places_to_spam: true
+  low_entropy_to_spam: 2.5
+
+# ---- Optional device/location ----
+# If your dataset has user_lat/user_lon & place_lat/place_lon columns, we can use distance.
+device_location:
+  far_km: 100
+  increase_nonvisitor_if_never_been: true
